@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <title>Meu perfil - LabCsrf</title>
+</head>
+<body>
+    <h1>Meu perfil</h1>
+
+    <p>Usuário: <strong>@ViewBag.Usuario</strong></p>
+    <p>E-mail atual: <strong id="email-atual">@ViewBag.Email</strong></p>
+
+    <h2>Trocar e-mail</h2>
+
+    <form action="/Conta/AlterarEmail" method="post">
+        <input type="email" name="novoEmail" placeholder="novo@exemplo.com" required />
+        <button type="submit">Salvar</button>
+    </form>
+
+    <p><a href="/Conta/Sair">Sair</a></p>
+</body>
+</html>

